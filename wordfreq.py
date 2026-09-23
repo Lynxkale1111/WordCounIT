@@ -57,3 +57,9 @@ def countWords(words, ignore):
             continue
         wdict[wd] = wdict.get(wd, 0) + 1
     return wdict
+
+def printTopMost(words, n):
+    sortedWords = sorted(words.items(), key=lambda x: x[1], reverse=True)[:n]
+    
+    for word in sortedWords:
+        print(word[0].ljust(20) + str(word[1]).rjust(5))
