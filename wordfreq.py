@@ -6,7 +6,7 @@ def tokenize(lines):
         # we keep going until we have processed all characters in the line
         while start < len(line):
             # skips over spaces
-            while start < len(line) and line[start] == " ":
+            while start < len(line) and line[start].isspace():
                 start += 1
 
             ## if we skipped past the end of our current line, we stop processing our current line.
