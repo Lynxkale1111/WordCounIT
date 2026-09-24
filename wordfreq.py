@@ -49,17 +49,17 @@ def tokenize(lines):
 
 def countWords(words, ignore):
     wdict = {}
-    ignoredict = set()
+    ignoreset = set()
     for wd in ignore:
-        ignoredict.add(wd)
+        ignoreset.add(wd)
     for wd in words:
-        if wd in ignoredict:
+        if wd in ignoreset:
             continue
         wdict[wd] = wdict.get(wd, 0) + 1
     return wdict
 
 def printTopMost(words, n):
     sortedWords = sorted(words.items(), key=lambda x: x[1], reverse=True)[:n]
-    
+
     for word in sortedWords:
         print(word[0].ljust(20) + str(word[1]).rjust(5))
